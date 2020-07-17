@@ -13,3 +13,5 @@ COPY --from=installer /aws-cli-bin/ /usr/local/bin/
 RUN ["aws", "--version"]
 RUN ["java", "-version"]
 RUN ["mvn", "-version"]
+
+CMD ["bash"]

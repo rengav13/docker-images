@@ -25,11 +25,12 @@ COPY --from=aws-cli-installer /usr/local/aws-cli/ /usr/local/aws-cli/
 COPY --from=aws-cli-installer /aws-cli-bin/ /usr/local/bin/
 COPY --from=docker-installer /usr/local/bin/docker /usr/local/bin/
 
-RUN yum install -y git
+RUN apt install git
 
 RUN ["aws", "--version"]
 RUN ["java", "-version"]
 RUN ["mvn", "-version"]
 RUN ["docker", "--version"]
+RUN ["git", "--version"]
 
 CMD [ "sleep", "9999999" ]
